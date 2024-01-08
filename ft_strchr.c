@@ -6,7 +6,7 @@
 /*   By: flo-dolc <flo-dolc@student.42roma.it>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/10 03:18:17 by flo-dolc          #+#    #+#             */
-/*   Updated: 2024/01/10 03:29:21 by flo-dolc         ###   ########.fr       */
+/*   Updated: 2024/01/11 17:49:41 by flo-dolc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,5 +25,7 @@ char	*ft_strchr(const char *str, int ch)
 			return (&caststr[i]);
 		i++;
 	}
+	if (caststr[i] == ch)
+		return (&caststr[i]);
 	return (NULL);
 }

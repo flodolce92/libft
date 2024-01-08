@@ -6,7 +6,7 @@
 /*   By: flo-dolc <flo-dolc@student.42roma.it>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/09 21:10:30 by flo-dolc          #+#    #+#             */
-/*   Updated: 2024/01/10 03:15:26 by flo-dolc         ###   ########.fr       */
+/*   Updated: 2024/01/11 17:20:29 by flo-dolc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@ void	*ft_memmove(void *dest, const void *src, size_t len)
 	unsigned char	*castdest;
 	unsigned char	*castsrc;
 
+	if (!dest && !src)
+		return (NULL);
 	castdest = (unsigned char *) dest;
 	castsrc = (unsigned char *) src;
 	if (dest < src)
