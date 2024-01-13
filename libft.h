@@ -6,7 +6,7 @@
 /*   By: flo-dolc <flo-dolc@student.42roma.it>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/11 11:23:08 by flo-dolc          #+#    #+#             */
-/*   Updated: 2024/01/13 19:48:22 by flo-dolc         ###   ########.fr       */
+/*   Updated: 2024/01/14 00:43:01 by flo-dolc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,13 +31,19 @@ int		ft_memcmp(const void *ptr1, const void *ptr2, size_t n);
 void	*ft_memcpy(void *dest, const void *src, size_t n);
 void	*ft_memmove(void *dest, const void *src, size_t len);
 void	*ft_memset(void *dest, int value, size_t len);
+void	ft_putchar_fd(char c, int fd);
+void	ft_putendl_fd(char *s, int fd);
+void	ft_putnbr_fd(int n, int fd);
+void	ft_putstr_fd(char *s, int fd);
 char	**ft_split(const char *str, char c);
 char	*ft_strchr(const char *str, int ch);
 char	*ft_strdup(const char *src);
+void	ft_striteri(char *s, void (*f)(unsigned int, char*));
 char	*ft_strjoin(const char *s1, const char *s2);
 size_t	ft_strlcat(char *dest, const char *src, size_t size);
 size_t	ft_strlcpy(char *dest, const char *src, size_t size);
 int		ft_strlen(const char *str);
+char	*ft_strmapi(const char *s, char (*f)(unsigned int, char));
 int		ft_strncmp(const char *s1, const char *s2, size_t n);
 char	*ft_strnstr(char *big, char *little, size_t len);
 char	*ft_strrchr(const char *str, int ch);
