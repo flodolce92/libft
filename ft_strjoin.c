@@ -6,7 +6,7 @@
 /*   By: flo-dolc <flo-dolc@student.42roma.it>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/13 03:57:29 by flo-dolc          #+#    #+#             */
-/*   Updated: 2024/01/13 04:07:15 by flo-dolc         ###   ########.fr       */
+/*   Updated: 2024/01/15 19:53:43 by flo-dolc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,8 @@ char	*ft_strjoin(const char *s1, const char *s2)
 	int		i;
 	int		size;
 
+	if (!s1 || !s2)
+		return (NULL);
 	i = 0;
 	size = ft_strlen(s1) + ft_strlen(s2);
 	str = (char *) malloc(sizeof(char) * size + 1);

@@ -6,7 +6,7 @@
 /*   By: flo-dolc <flo-dolc@student.42roma.it>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/11 23:40:28 by flo-dolc          #+#    #+#             */
-/*   Updated: 2024/01/12 00:23:57 by flo-dolc         ###   ########.fr       */
+/*   Updated: 2024/01/15 22:23:00 by flo-dolc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@ char	*ft_strnstr(char *big, char *little, size_t len)
 	size_t	i;
 	size_t	j;
 
+	if (!big || !little)
+		return (NULL);
 	if (*little == '\0')
 		return (big);
 	i = 0;
