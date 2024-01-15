@@ -6,7 +6,7 @@
 /*   By: flo-dolc <flo-dolc@student.42roma.it>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/11 00:32:41 by flo-dolc          #+#    #+#             */
-/*   Updated: 2024/01/15 20:57:15 by flo-dolc         ###   ########.fr       */
+/*   Updated: 2024/01/17 15:57:41 by flo-dolc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,6 @@ char	*ft_strdup(const char *src)
 	char	*dup;
 	size_t	srclen;
 
-	if (!src)
-		return (NULL);
 	srclen = ft_strlen(src);
 	dup = (char *) malloc(sizeof(char) * srclen + 1);
 	if (!dup)

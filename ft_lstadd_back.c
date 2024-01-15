@@ -6,7 +6,7 @@
 /*   By: flo-dolc <flo-dolc@student.42roma.it>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/14 04:16:48 by flo-dolc          #+#    #+#             */
-/*   Updated: 2024/01/14 04:43:45 by flo-dolc         ###   ########.fr       */
+/*   Updated: 2024/01/16 01:41:21 by flo-dolc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,14 +16,13 @@ void	ft_lstadd_back(t_list **lst, t_list *new)
 {
 	t_list	*p;
 
-	if (lst)
+	if (!lst)
+		return ;
+	if (*lst == NULL)
+		*lst = new;
+	else
 	{
-		if (*lst == NULL)
-			*lst = new;
-		else
-		{
-			p = ft_lstlast(*lst);
-			p->next = new;
-		}
+		p = ft_lstlast(*lst);
+		p->next = new;
 	}
 }
