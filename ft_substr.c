@@ -6,7 +6,7 @@
 /*   By: flo-dolc <flo-dolc@student.42roma.it>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/13 03:23:36 by flo-dolc          #+#    #+#             */
-/*   Updated: 2024/01/15 19:52:25 by flo-dolc         ###   ########.fr       */
+/*   Updated: 2024/01/17 20:22:29 by flo-dolc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,10 @@ char	*ft_substr(const char *str, unsigned int start, size_t len)
 	if (!str)
 		return (NULL);
 	i = 0;
+	if (start > (size_t) ft_strlen(str))
+		return (ft_strdup(""));
+	if (len > (size_t) ft_strlen(str))
+		len = (size_t) ft_strlen(str);
 	sub = (char *) malloc(sizeof(char) * (len + 1));
 	if (!sub)
 		return (NULL);

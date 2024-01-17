@@ -6,7 +6,7 @@
 /*   By: flo-dolc <flo-dolc@student.42roma.it>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/11 01:39:23 by flo-dolc          #+#    #+#             */
-/*   Updated: 2024/01/11 22:09:32 by flo-dolc         ###   ########.fr       */
+/*   Updated: 2024/01/17 16:30:48 by flo-dolc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ size_t	ft_strlcat(char *dest, const char *src, size_t size)
 		return (size + ft_strlen(src));
 	if (!(destlen <= size - 1))
 		return (size + srclen);
-	while (src[i] != '\0' && destlen + i < size - 1)
+	while (src[i] != '\0' && ((destlen + i) + 1) < size)
 	{
 		dest[destlen + i] = src[i];
 		i++;

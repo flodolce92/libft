@@ -6,7 +6,7 @@
 /*   By: flo-dolc <flo-dolc@student.42roma.it>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/11 22:32:20 by flo-dolc          #+#    #+#             */
-/*   Updated: 2024/01/17 15:40:54 by flo-dolc         ###   ########.fr       */
+/*   Updated: 2024/01/17 16:33:00 by flo-dolc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ void	*ft_calloc(size_t n, size_t size)
 {
 	void	*ptr;
 
-	if (n > (4294967295 / size))
+	if (n && size && n > (4294967295 / size))
 		return (NULL);
 	ptr = malloc(size * n);
 	if (!ptr)
