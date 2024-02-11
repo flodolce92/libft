@@ -6,7 +6,7 @@
 /*   By: flo-dolc <flo-dolc@student.42roma.it>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/13 03:23:36 by flo-dolc          #+#    #+#             */
-/*   Updated: 2024/01/13 03:56:12 by flo-dolc         ###   ########.fr       */
+/*   Updated: 2024/01/14 17:26:43 by flo-dolc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ char	*ft_substr(const char *str, unsigned int start, size_t len)
 	sub = (char *) malloc(sizeof(char) * (len + 1));
 	if (!sub)
 		return (NULL);
-	while (i < len && str[start + i])
+	while (i < len && start < (size_t) ft_strlen(str))
 	{
 		sub[i] = str[start + i];
 		i++;

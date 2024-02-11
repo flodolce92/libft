@@ -6,7 +6,7 @@
 /*   By: flo-dolc <flo-dolc@student.42roma.it>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/13 04:08:33 by flo-dolc          #+#    #+#             */
-/*   Updated: 2024/01/13 04:40:23 by flo-dolc         ###   ########.fr       */
+/*   Updated: 2024/01/14 20:38:56 by flo-dolc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,8 @@ char	*ft_strtrim(const char *s1, const char *set)
 	end = ft_strlen(s1) - 1;
 	while (ft_strchr(set, s1[start]))
 		start++;
+	if (start > end)
+		return (strdup(s1 + end + 1));
 	while (ft_strchr(set, s1[end]))
 		end--;
 	str = (char *) malloc(sizeof(char) * (end - start) + 2);
