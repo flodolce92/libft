@@ -33,17 +33,33 @@ SRCS		=	ft_memset.c \
 				ft_putendl_fd.c \
 				ft_putnbr_fd.c
 
-OBJS		= $(SRCS:.c=.o)
+SRCS_B		=	ft_lstnew.c \
+				ft_lstadd_front.c \
+				ft_lstsize.c \
+				ft_lstlast.c \
+				ft_lstadd_back.c \
+				ft_lstdelone.c \
+				ft_lstclear.c \
+				ft_lstiter.c \
+				ft_lstmap.c
 
-NAME		= libft.a
+OBJS		=	$(SRCS:.c=.o)
 
-CC			= gcc
+OBJS_B		=	$(SRCS_B:.c=.o)
 
-CFLAGS		= -Wall -Wextra -Werror
+NAME		=	libft.a
 
-RM			= rm -f
+CC			=	gcc
+
+CFLAGS		=	-Wall -Wextra -Werror
+
+RM			=	rm -f
 
 all:		$(NAME)
+
+bonus:		$(NAME) $(OBJS_B)
+			ar rc $(NAME) $(OBJS_B)
+			ranlib $(NAME)
 
 .c.o:
 			$(CC) $(CFLAGS) -c $< -o $(<:.c=.o)
@@ -53,11 +69,11 @@ $(NAME):	$(OBJS)
 			ranlib $(NAME)
 
 clean:
-			$(RM) $(OBJS)
+			$(RM) $(OBJS) $(OBJS_B)
 
 fclean:		clean
 			$(RM) $(NAME)
 
 re:		fclean all
 
-.PHONY:		all clean fclean re
+.PHONY:		all bonus clean fclean re
