@@ -6,7 +6,7 @@
 #    By: flo-dolc <flo-dolc@student.42roma.it>      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/01/08 19:58:07 by flo-dolc          #+#    #+#              #
-#    Updated: 2024/03/12 03:00:00 by flo-dolc         ###   ########.fr        #
+#    Updated: 2024/03/12 03:27:13 by flo-dolc         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -70,29 +70,30 @@ RM			=	rm -f
 all:			$(NAME)
 
 $(OBJS_DIR):
-				mkdir -p $(OBJS_DIR)
+				@mkdir -p $(OBJS_DIR)
 
 $(OBJS_DIR)%.o:	%.c | $(OBJS_DIR)
 				$(CC) $(CFLAGS) -c $< -o $@
 
 $(NAME):		$(OBJS_DIR) $(OBJS)
-				@make -C ./ft_printf
-				cp ./ft_printf/libftprintf.a $(NAME)
-				ar rc $(NAME) $(OBJS)
-				ranlib $(NAME)
+				@make --no-print-directory -C ./ft_printf
+				@cp ./ft_printf/libftprintf.a $(NAME)
+				@ar rc $(NAME) $(OBJS)
+				@ranlib $(NAME)
 
 clean:
 				$(RM) $(OBJS)
 				$(RM) -r $(OBJS_DIR)
-				@make -C ./ft_printf clean
+				@make --no-print-directory -C ./ft_printf clean
 
 fclean:			clean
 				$(RM) $(NAME)
-				@make -C ./ft_printf fclean
+				@make --no-print-directory -C ./ft_printf fclean
 
 re:				fclean all
 
 norm:
 				@norminette $(SRCS)
+				@make --no-print-directory -C ./ft_printf norm
 
 .PHONY:			all bonus clean fclean re norm
