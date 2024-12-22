@@ -6,9 +6,16 @@
 #    By: flo-dolc <flo-dolc@student.42roma.it>      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/01/17 22:26:18 by flo-dolc          #+#    #+#              #
-#    Updated: 2024/03/12 03:21:46 by flo-dolc         ###   ########.fr        #
+#    Updated: 2024/12/23 00:20:08 by flo-dolc         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
+
+# Colors
+GREEN		=	\033[0;32m
+YELLOW		=	\033[0;33m
+RED			=	\033[0;31m
+BLUE		=	\033[0;34m
+RESET		=	\033[0m
 
 SRCS		=	ft_printf.c \
 				hex_utils.c \
@@ -26,30 +33,36 @@ CC			=	gcc
 
 CFLAGS		=	-Wall -Wextra -Werror
 
-RM			=	rm -f
+RM			=	@rm -f
 
 all:			$(NAME)
 
 $(OBJS_DIR):
+				@echo "$(YELLOW)Creating object directory...$(RESET)"
 				@mkdir -p $(OBJS_DIR)
 
 $(OBJS_DIR)%.o:	%.c | $(OBJS_DIR)
-				$(CC) $(CFLAGS) -c $< -o $@
+				@echo "$(BLUE)Compiling $<...$(RESET)"
+				@$(CC) $(CFLAGS) -c $< -o $@
 
 $(NAME):		$(OBJS_DIR) $(OBJS)
+				@echo "$(GREEN)Linking objects and creating $(NAME)...$(RESET)"
 				@ar rc $(NAME) $(OBJS)
 				@ranlib $(NAME)
 
 clean:
+				@echo "$(RED)Cleaning object files...$(RESET)"
 				$(RM) $(OBJS)
 				$(RM) -r $(OBJS_DIR)
 
 fclean:			clean
+				@echo "$(RED)Removing executable...$(RESET)"
 				$(RM) $(NAME)
 
 re:				fclean all
 
 norm:
+				@echo "$(BLUE)Running norminette...$(RESET)"
 				@norminette $(SRCS)
 
 .PHONY:			all bonus clean fclean re norm
