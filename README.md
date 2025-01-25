@@ -12,3 +12,7 @@ test_ft_substr: OK | test_ft_strjoin: OK | test_ft_strtrim: OK | test_ft_split: 
 test_ft_striteri: OK | test_ft_putchar_fd: OK | test_ft_putstr_fd: OK | test_ft_putendl_fd: OK | test_ft_putnbr_fd: OK |
 bonus: 9/9 functions correct
 ```
+
+## 🚨 A Quick Word of Wisdom
+DO NOT clone this repository and push it to your own. Seriously, don't.
+Use your brain, not Ctrl+C + Ctrl+V. Learn, adapt, and build something awesome yourself!
